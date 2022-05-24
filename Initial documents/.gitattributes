@@ -1,2 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+
+lint:
+  
+    run-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Super-Linter
+        uses: github/super-linter@v4.9.2
+        env:
+            GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
